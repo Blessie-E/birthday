@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Cake</title>
+  <link rel="stylesheet" href="cake.css">
+  <style>
+    
+    .letter {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .letter:hover {
+      background-color: #e0e0e0;
+    }
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      max-width: 80%;
+      width: auto;
+      border-radius: 10px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+    
+    /* Style for the large image */
+    .modal img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .msg {
+      text-shadow: 0 0 3px #FF76CE;
+      font-size: 40px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .msg2 {
+      text-shadow: 0 0 3px #FF76CE;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="audio-container">
+    <audio controls>
+      <source src="hbd.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="cake-container">
+    <div class="cake1">
+      <div class="candle">
+        <div class="flame-wrapper" id="flameWrapper">
+          <div class="flame red"></div>
+          <div class="flame orange"></div>
+          <div class="flame gold"></div>
+          <div class="flame white"></div>
+          <div class="base blue"></div>
+          <div class="base black"></div>
+        </div>
+        <div class="smoke-wrapper" id="smokeWrapper" style="display: none;">
+          <div class="smoke"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cake2">
+    
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <center>
+        <img id="modalImage" src="msg1.jpg"> <br>
+        <p class="msg">Happiest Birthday to the Best Tita in the World! </p>
+        <p class="msg2">I would like to thank you for all the love you have given this family. You are a big part of my growth and development, and I have learned so much from you. Thank you for being a loving and caring mother figure to many. You are amazing! and I thank the Lord every day for blessing this family with such a SUPER TITA like you. May the Lord bless you more. Happy Birthday, and I Love You, Tita!</p>
+      </center>
+    </div>
+  </div>
+
+
+  <div class="letter" id="openLetter">Click to see the message</div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("openLetter");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>
